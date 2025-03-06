@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/hello', function () {
+    return 'Hello World';
+});
+
+Route::get('/world', function () {
+    return 'World';
+});
+
 Route::get('/', function () {
-    return view('welcome');
+    return 'selamat datang';
+});
+
+Route::get('/about', function () {
+    return 'SIB 2C - 2341760131 - An Naastasya S.';
 });
