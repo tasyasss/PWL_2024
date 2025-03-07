@@ -82,12 +82,15 @@ Route::resource('photos', PhotoController::class)->except([
     'create', 'store', 'update', 'destroy'
 ]);
    
-// Membuat View
-Route::get('/greeting', function () {
-    return view('hello', ['name' => 'Natha']);
-});
+// // Membuat View
+// Route::get('/greeting', function () {
+//     return view('hello', ['name' => 'Natha']);
+// });
     
-// View dalam direktori
-Route::get('/greeting', function () {
-    return view('blog.hello', ['name' => 'Natha']);
-});
+// // View dalam direktori
+// Route::get('/greeting', function () {
+//     return view('blog.hello', ['name' => 'Natha']);
+// });
+
+// Menampilkan View dari Controller
+Route::get('/greeting', [WelcomeController::class,'greeting']);
