@@ -87,3 +87,7 @@ Route::get('/greeting', function () {
     return view('hello', ['name' => 'Natha']);
 });
     
+// View dalam direktori
+Route::get('/greeting', function () {
+    return view('blog.hello', ['name' => 'Natha']);
+});
