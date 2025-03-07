@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +23,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/hello', function () {
-    return 'Hello World';
-});
+// Route::get('/hello', function () {
+//     return 'Hello World';
+// });
 
 Route::get('/world', function () {
     return 'World';
@@ -49,8 +55,19 @@ Route::get('/user/{name?}', function ($name=null) {
     return 'Nama saya '.$name;
 });
 
-
 Route::get('/user/{name?}', function ($name='John') {
     return 'Nama saya '.$name;
 });
-    
+
+// WelcomeController.php
+Route::get('/hello', [WelcomeController::class,'hello']);
+
+// // PageController.php
+// Route::get('/', [PageController::class,'index']);
+// Route::get('/about', [PageController::class,'about']);
+// Route::get('/articles/{id}', [PageController::class,'articles']);
+
+// Single Action Controller
+Route::get('/', [HomeController::class,'index']);
+Route::get('/about', [AboutController::class,'about']);
+Route::get('/articles/{id}', [ArticleController::class,'articles']);
